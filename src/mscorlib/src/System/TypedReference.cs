@@ -50,7 +50,7 @@ namespace System {
                     throw new MissingMemberException(Environment.GetResourceString("MissingMemberTypeRef"));
 
                 RuntimeType fieldType = (RuntimeType)field.FieldType;
-                if (fieldType.IsPrimitive)
+                if (i < (flds.Length - 1) && fieldType.IsPrimitive)
                     throw new ArgumentException(Environment.GetResourceString("Arg_TypeRefPrimitve"));
                 
                 if (i < (flds.Length - 1) && !fieldType.IsValueType)
